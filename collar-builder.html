@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="/images/brand/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="180x180" href="/images/brand/favicon.png" />
+  <link rel="apple-touch-icon" href="/images/brand/favicon.png" />
+  <meta name="theme-color" content="#3e5236" />
+  <title>Collar Builder · Design Your Own Layered PVC-Coated Webbing Dog Collar | Willabean</title>
+  <meta name="description" content="Design your own handmade UK dog collar. Pick layer count, colours, hardware finish and fastening, then see a live preview before we build it for your dog." />
+  <link rel="canonical" href="https://www.willabean.co.uk/collar-builder.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Design your own dog collar · Willabean Collar Builder" />
+  <meta property="og:description" content="Pick layer count, colours, hardware and fastening. Live SVG preview. Handmade in the UK to your dog's exact measurements." />
+  <meta property="og:url" content="https://www.willabean.co.uk/collar-builder.html" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:image" content="https://www.willabean.co.uk/images/lifestyle/hero.jpg" />
+  <meta property="og:image:alt" content="Willabean handmade UK dog collar" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.willabean.co.uk/images/lifestyle/hero.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,30..100;1,9..144,300..600,30..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Willabean Collar Builder",
+    "description": "Interactive design tool to preview a layered PVC-coated webbing dog collar in any colour combination, with metal hardware and buckle or clasp options. Handmade in the UK.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Willabean",
+      "url": "https://www.willabean.co.uk/"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Custom dog collar design" },
+      { "@type": "Thing", "name": "PVC-coated webbing" },
+      { "@type": "Thing", "name": "Layered collar construction" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.willabean.co.uk/" },
+      { "@type": "ListItem", "position": 2, "name": "Collar Builder", "item": "https://www.willabean.co.uk/collar-builder.html" }
+    ]
+  }
+  </script>
+</head>
+<body data-nav="collar-builder">
+
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <section class="builder-hero">
+      <div class="container-narrow">
+        <span class="eyebrow">Prototype · Design yours</span>
+        <h1>Build a collar, <em>see it before we make it.</em></h1>
+        <p>
+          Pick how many layers you want, choose a colour for each, set your hardware finish and fastening, and watch the preview update as you go. When you're happy with the design, send it to the workshop, we'll reply with a quote and a build slot.
+        </p>
+      </div>
+    </section>
+
+    <section class="builder-section">
+      <div class="container">
+        <div class="builder-grid" data-collar-builder>
+
+          <!-- LIVE PREVIEW -->
+          <div class="builder-preview">
+            <div class="builder-preview-frame" data-collar-svg aria-live="polite"></div>
+            <p class="builder-preview-caption" data-match>Closest match: <a href="/products/winnie.html"><strong>The Winnie</strong></a></p>
+            <div class="builder-preview-summary" data-summary aria-label="Your collar specification"></div>
+          </div>
+
+          <!-- CONTROLS -->
+          <div class="builder-controls">
+
+            <div class="product-picker">
+              <div class="picker-label">
+                <span class="label">Number of layers</span>
+                <span class="selected-value" id="layerCountLabel">2</span>
+              </div>
+              <div class="builder-layer-count">
+                <select class="input" data-layer-count aria-label="Number of layers" onchange="document.getElementById('layerCountLabel').textContent=this.value;">
+                  <option value="1">1 - Single colour (Hugo / Bertie style)</option>
+                  <option value="2" selected>2 - Two-tone layered (Winnie / Mabel)</option>
+                  <option value="3">3 - Three-colour (Willow style)</option>
+                  <option value="4">4 - Four-colour bespoke (Archie)</option>
+                </select>
+              </div>
+            </div>
+
+            <div data-layer-pickers></div>
+
+            <div class="product-picker">
+              <div class="picker-label">
+                <span class="label">Hardware finish</span>
+                <span class="selected-value" data-hardware-label>Silver</span>
+              </div>
+              <div class="swatches" data-hardware-picker></div>
+            </div>
+
+            <div class="product-picker">
+              <div class="picker-label">
+                <span class="label">Fastening</span>
+                <span class="selected-value" data-fastening-label>Buckle</span>
+              </div>
+              <div class="options" data-fastening-picker></div>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" data-send-builder>Send my design to the workshop</button>
+            <p class="field-hint" style="margin-top: var(--s-3);">
+              Or copy a screenshot of the preview and email it to <a href="mailto:team@willabean.co.uk" style="color:var(--moss); border-bottom: 1px solid var(--moss);">team@willabean.co.uk</a> with your dog's neck measurement.
+            </p>
+          </div>
+        </div>
+
+        <!-- Help panel -->
+        <div class="builder-help">
+          <div>
+            <h3>What is the prototype showing me?</h3>
+            <p>An indicative on-screen render. Hex values are approximations, the actual webbing has a slight sheen and sits a touch deeper than the swatch. The finished collar may sit a shade differently to what you see here.</p>
+          </div>
+          <div>
+            <h3>Can I order from this page?</h3>
+            <p>This is a design tool. Once you've landed on a combination, we'll send you the right product link to order, with the colours pre-noted on your order so the workshop builds exactly what you designed.</p>
+          </div>
+          <div>
+            <h3>Will my dog's neck measurement be on the order?</h3>
+            <p>Yes. The product page asks for your dog's neck measurement in cm and ties it to the order. <a href="/blog/how-to-measure.html" style="color:var(--moss); border-bottom: 1px solid var(--moss);">Read the measurement guide</a> if you're not sure how.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-cart"></div>
+  <div id="site-footer"></div>
+
+  <script src="/js/includes.js"></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/config.js" defer></script>
+  <script src="/js/shopify.js" defer></script>
+  <script src="/js/cart.js" defer></script>
+  <script src="/js/colours.js" defer></script>
+  <script src="/js/collar-builder.js" defer></script>
+</body>
+</html>

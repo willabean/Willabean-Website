@@ -1,0 +1,148 @@
+/* Base typography, layout, utility elements */
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.55;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Display headings — Fraunces with a warm, considered feel */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 50, "WONK" 0, "opsz" 144;
+  letter-spacing: -0.015em;
+  color: var(--moss-deep);
+}
+
+h1 {
+  font-size: var(--fs-3xl);
+  line-height: 1.02;
+  letter-spacing: -0.022em;
+}
+
+h2 {
+  font-size: var(--fs-2xl);
+  line-height: 1.08;
+}
+
+h3 {
+  font-size: var(--fs-xl);
+  line-height: 1.15;
+}
+
+h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--moss-deep);
+}
+
+h4 { font-size: var(--fs-lg); }
+h5 { font-size: var(--fs-md); }
+h6 { font-size: var(--fs-base); letter-spacing: 0.02em; text-transform: uppercase; }
+
+p {
+  font-size: var(--fs-base);
+  color: var(--text);
+}
+
+.lead {
+  font-size: var(--fs-md);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.eyebrow {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+a {
+  color: var(--primary);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+strong { font-weight: 600; color: var(--moss-deep); }
+
+em { font-style: italic; color: var(--muted); }
+
+blockquote {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: 1.35;
+  color: var(--moss-deep);
+  font-style: italic;
+  border-left: 2px solid var(--bronze);
+  padding-left: var(--s-5);
+  margin: var(--s-6) 0;
+}
+
+/* Layout primitives */
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+section {
+  padding-block: var(--s-10);
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-block: var(--s-12);
+  }
+}
+
+.stack > * + * { margin-top: var(--s-4); }
+.stack-lg > * + * { margin-top: var(--s-6); }
+.stack-xl > * + * { margin-top: var(--s-8); }
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--border);
+  margin-block: var(--s-8);
+}
+
+/* Main content offset for sticky header */
+main {
+  min-height: calc(100vh - var(--header-h));
+}
+
+/* Brand mark — mirrors the logo's letterform split (moss "Willa" + bronze italic "bean").
+   Use sparingly: hero moments only, not body copy. */
+.brand-mark {
+  color: var(--moss);
+  font-weight: inherit;
+}
+.brand-mark em {
+  color: var(--bronze);
+  font-style: italic;
+}

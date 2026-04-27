@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Willabean Brand Swatches</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,30..100;1,9..144,300..700,30..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:        #f5ede0;
+      --cream-deep:   #ece2cf;
+      --cream-soft:   #faf5ec;
+      --moss:         #3e5236;
+      --moss-deep:    #2a3a25;
+      --moss-soft:    #5e7252;
+      --bronze:       #a67b40;
+      --bronze-soft:  #c69a5d;
+      --ink:          #1f1f1a;
+      --muted:        #6b6a63;
+      --muted-light:  #a8a59b;
+      --terracotta:   #c2592e;
+      --border:       #d8cfbd;
+      --border-soft:  #e8dfcd;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--cream); color: var(--ink); font-family: "Inter", system-ui, sans-serif; line-height: 1.5; }
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 56px 48px;
+    }
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: 44px;
+      color: var(--moss-deep);
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    h1 em { font-style: italic; color: var(--bronze); }
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+    }
+    h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: 24px;
+      color: var(--moss-deep);
+      margin: 36px 0 16px;
+      letter-spacing: -0.005em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .grid.full { grid-template-columns: 1fr; }
+    .swatch {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 14px;
+      align-items: stretch;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    .swatch-block {
+      min-height: 88px;
+    }
+    .swatch-info {
+      padding: 10px 14px 12px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .swatch-name {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: 17px;
+      color: var(--moss-deep);
+    }
+    .swatch-hex {
+      font-family: "Inter", monospace;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .swatch-rgb {
+      font-family: "Inter", monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+    .swatch-use {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.35;
+    }
+
+    /* Logo demos */
+    .logo-demos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .logo-demo {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px 14px 18px;
+      text-align: center;
+      page-break-inside: avoid;
+    }
+    .logo-demo img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+    }
+    .logo-demo.logo-demo--mark img { max-width: 110px; }
+    .logo-demo .label {
+      font-size: 11px;
+      margin-top: 16px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Type specimens */
+    .type-specimen {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+      padding: 24px;
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+    .type-specimen .name {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .specimen-fraunces .h-display {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: 44px;
+      letter-spacing: -0.01em;
+      color: var(--moss-deep);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .specimen-fraunces .h-display em { font-style: italic; color: var(--bronze); }
+    .specimen-fraunces .h-sub {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--moss-deep);
+      margin-bottom: 4px;
+    }
+    .specimen-fraunces .alphabet {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 16px;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      margin-top: 16px;
+    }
+
+    .specimen-inter .h-body {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--moss-deep);
+      margin-bottom: 6px;
+    }
+    .specimen-inter .body-text {
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      color: var(--ink);
+      line-height: 1.55;
+      max-width: 56ch;
+    }
+    .specimen-inter .alphabet {
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      margin-top: 16px;
+    }
+
+    /* Quick reference */
+    .reference {
+      background: var(--cream-deep);
+      border-radius: 6px;
+      padding: 18px 22px;
+      font-size: 13px;
+      color: var(--moss-deep);
+      line-height: 1.7;
+    }
+    .reference strong { color: var(--moss-deep); font-weight: 600; }
+    .reference code {
+      font-family: "Inter", monospace;
+      background: rgba(255,255,255,0.6);
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media print {
+      html, body { background: #fff; }
+      .page { padding: 24px; max-width: none; }
+      h1 { font-size: 32px; }
+      .swatch { box-shadow: none; }
+      .no-print { display: none; }
+      a[href] { color: inherit; text-decoration: none; }
+    }
+    @page { margin: 14mm; size: A4; }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <h1>Willabean — <em>Brand Swatches</em></h1>
+    <p class="meta">Colour palette &middot; type specimens &middot; logo guidance &middot; for print, packaging, social, and any external work.</p>
+
+    <h2>Brand core</h2>
+    <div class="grid">
+      <div class="swatch">
+        <div class="swatch-block" style="background: #3e5236;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Moss</div>
+          <div class="swatch-hex">#3E5236</div>
+          <div class="swatch-rgb">RGB 62, 82, 54</div>
+          <div class="swatch-use">Primary brand. Buttons, links, signage.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #2a3a25;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Moss Deep</div>
+          <div class="swatch-hex">#2A3A25</div>
+          <div class="swatch-rgb">RGB 42, 58, 37</div>
+          <div class="swatch-use">Headings and the logo on a cream background.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #a67b40;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Bronze</div>
+          <div class="swatch-hex">#A67B40</div>
+          <div class="swatch-rgb">RGB 166, 123, 64</div>
+          <div class="swatch-use">Accent. Discount callouts, hardware references, foil.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #5e7252;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Moss Soft</div>
+          <div class="swatch-hex">#5E7252</div>
+          <div class="swatch-rgb">RGB 94, 114, 82</div>
+          <div class="swatch-use">Subtle brand wash on lighter backgrounds.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Backgrounds</h2>
+    <div class="grid">
+      <div class="swatch">
+        <div class="swatch-block" style="background: #f5ede0; border-right: 1px solid var(--border);"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cream</div>
+          <div class="swatch-hex">#F5EDE0</div>
+          <div class="swatch-rgb">RGB 245, 237, 224</div>
+          <div class="swatch-use">Primary background. The site's "page".</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #ece2cf; border-right: 1px solid var(--border);"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cream Deep</div>
+          <div class="swatch-hex">#ECE2CF</div>
+          <div class="swatch-rgb">RGB 236, 226, 207</div>
+          <div class="swatch-use">Cards, alternating sections, callout panels.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #faf5ec; border-right: 1px solid var(--border);"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cream Soft</div>
+          <div class="swatch-hex">#FAF5EC</div>
+          <div class="swatch-rgb">RGB 250, 245, 236</div>
+          <div class="swatch-use">Hero washes, text on the moss background.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #c69a5d;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Bronze Soft</div>
+          <div class="swatch-hex">#C69A5D</div>
+          <div class="swatch-rgb">RGB 198, 154, 93</div>
+          <div class="swatch-use">Soft bronze tint, badges, light accents.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Text and lines</h2>
+    <div class="grid">
+      <div class="swatch">
+        <div class="swatch-block" style="background: #1f1f1a;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Ink</div>
+          <div class="swatch-hex">#1F1F1A</div>
+          <div class="swatch-rgb">RGB 31, 31, 26</div>
+          <div class="swatch-use">Body text. Almost-black, warmer than pure.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #6b6a63;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Muted</div>
+          <div class="swatch-hex">#6B6A63</div>
+          <div class="swatch-rgb">RGB 107, 106, 99</div>
+          <div class="swatch-use">Secondary text, captions, small print.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #a8a59b;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Muted Light</div>
+          <div class="swatch-hex">#A8A59B</div>
+          <div class="swatch-rgb">RGB 168, 165, 155</div>
+          <div class="swatch-use">Tertiary text, very light accents.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #d8cfbd;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Border</div>
+          <div class="swatch-hex">#D8CFBD</div>
+          <div class="swatch-rgb">RGB 216, 207, 189</div>
+          <div class="swatch-use">Card and component borders.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #e8dfcd;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Border Soft</div>
+          <div class="swatch-hex">#E8DFCD</div>
+          <div class="swatch-rgb">RGB 232, 223, 205</div>
+          <div class="swatch-use">Lighter dividers, internal cart drawer lines.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background: #c2592e;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Terracotta</div>
+          <div class="swatch-hex">#C2592E</div>
+          <div class="swatch-rgb">RGB 194, 89, 46</div>
+          <div class="swatch-use">Used sparingly. Sale, urgency, error states.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Logo on backgrounds</h2>
+    <div class="logo-demos">
+      <div class="logo-demo" style="background: #f5ede0;">
+        <img src="/images/brand/logo.svg" alt="Willabean full logo on cream" />
+        <div class="label" style="color: #2a3a25;">Cream &middot; full logo (primary use)</div>
+      </div>
+      <div class="logo-demo" style="background: #3e5236;">
+        <img src="/images/brand/logo.svg" alt="Willabean full logo on moss" style="filter: brightness(0) invert(1); opacity: 0.95;" />
+        <div class="label" style="color: rgba(250,245,236,0.85);">Moss &middot; reversed (mono)</div>
+      </div>
+      <div class="logo-demo" style="background: #2a3a25;">
+        <img src="/images/brand/logo.svg" alt="Willabean full logo on moss deep" style="filter: brightness(0) invert(1); opacity: 0.95;" />
+        <div class="label" style="color: rgba(255,255,255,0.7);">Moss Deep &middot; reversed (mono)</div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 28px;">Wordmark and icon</h2>
+    <div class="logo-demos">
+      <div class="logo-demo" style="background: #faf5ec;">
+        <img src="/images/brand/wordmark.svg" alt="Willabean wordmark on cream soft" />
+        <div class="label" style="color: #2a3a25;">Wordmark &middot; for navs and narrow spaces</div>
+      </div>
+      <div class="logo-demo logo-demo--mark" style="background: #f5ede0;">
+        <img src="/images/brand/icon.svg" alt="Willabean icon on cream" />
+        <div class="label" style="color: #2a3a25;">Icon &middot; for favicon, social avatar, packaging stamp</div>
+      </div>
+      <div class="logo-demo logo-demo--mark" style="background: #3e5236;">
+        <img src="/images/brand/icon.svg" alt="Willabean icon on moss" style="filter: brightness(0) invert(1); opacity: 0.95;" />
+        <div class="label" style="color: rgba(250,245,236,0.85);">Icon &middot; reversed for dark surfaces</div>
+      </div>
+    </div>
+
+    <h2>Typography</h2>
+
+    <div class="type-specimen specimen-fraunces">
+      <div class="name">Fraunces — Display, headings, logo</div>
+      <div class="h-display">A handmade UK <em>collar</em>.</div>
+      <div class="h-sub">Layered, riveted, made to fit.</div>
+      <div class="alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ &middot; abcdefghijklmnopqrstuvwxyz &middot; 0123456789 &middot; £&amp;%@</div>
+    </div>
+
+    <div class="type-specimen specimen-inter">
+      <div class="name">Inter — Body, UI, captions</div>
+      <div class="h-body">Pick how many layers you want, choose a colour for each, set your hardware finish and fastening.</div>
+      <div class="body-text">A lot of UK brands sell PVC-coated webbing dog collars. What you actually get for your money differs more than you'd think. Layered and riveted, not stitched or printed. Made to your dog's neck, not a size band. 19 webbing colours, 5 hardware finishes, your call.</div>
+      <div class="alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ &middot; abcdefghijklmnopqrstuvwxyz &middot; 0123456789 &middot; £&amp;%@</div>
+    </div>
+
+    <h2>Quick reference</h2>
+    <div class="reference">
+      <strong>For print and embroidery</strong> — Pantone-equivalent matches are a printer's job, but the closest standards are:<br/>
+      &middot; Moss <code>#3E5236</code> — close to Pantone <strong>5747 C</strong><br/>
+      &middot; Bronze <code>#A67B40</code> — close to Pantone <strong>4505 C</strong> or a real bronze foil for hot-stamping<br/>
+      &middot; Cream <code>#F5EDE0</code> — close to Pantone <strong>9183 C</strong> (or uncoated card)<br/>
+      &middot; Terracotta <code>#C2592E</code> — close to Pantone <strong>173 C</strong><br/><br/>
+      <strong>For social / digital</strong> — use the hex values above directly. Backgrounds: cream. Headlines: Moss Deep. Body: Ink. Accents: Bronze.<br/><br/>
+      <strong>Typefaces</strong> — both free on Google Fonts. Headlines/logo: <strong>Fraunces</strong> (medium 500, occasional italic for the brand mark). Body: <strong>Inter</strong> (400 regular, 600 for emphasis).
+    </div>
+
+    <div class="footer">
+      Willabean &middot; brand swatches &middot; mirror these values for any logo, packaging, signage or social work.
+    </div>
+
+  </div>
+</body>
+</html>

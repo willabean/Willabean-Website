@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.willabean.co.uk/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.willabean.co.uk/shop.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.willabean.co.uk/our-story.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/why-willabean.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.willabean.co.uk/help-me-choose.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <url><loc>https://www.willabean.co.uk/collections/collars.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.willabean.co.uk/collections/leads.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.willabean.co.uk/collections/matching-sets.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.willabean.co.uk/collections/gundog.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/collections/mud-daddy.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://www.willabean.co.uk/products/bertie.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/hugo.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/walter.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/winnie.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/mabel.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/willow.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/archie.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://www.willabean.co.uk/products/hugo-lead.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/winnie-lead.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/mabel-lead.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/archie-lead.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/henry-traffic-handle.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://www.willabean.co.uk/products/mud-daddy-5l.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://www.willabean.co.uk/products/puppy-dummy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/1lb-hand-throwing-dummy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/half-lb-long-throw-dummy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/water-dummy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/products/dummy-ball.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://www.willabean.co.uk/blog/index.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.willabean.co.uk/blog/how-to-measure.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/blog/what-is-biothane.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/blog/slip-vs-buckle.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.willabean.co.uk/blog/care-guide.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://www.willabean.co.uk/policies/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.willabean.co.uk/policies/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.willabean.co.uk/policies/returns.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.willabean.co.uk/policies/shipping.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+</urlset>

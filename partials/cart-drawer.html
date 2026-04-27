@@ -1,0 +1,33 @@
+<div class="cart-overlay" data-cart-overlay aria-hidden="true"></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart-header">
+    <h3>Your basket</h3>
+    <button class="cart-close" aria-label="Close cart" data-close-cart>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="5" y1="5" x2="19" y2="19"/>
+        <line x1="19" y1="5" x2="5" y2="19"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="cart-items" data-cart-items>
+    <div class="cart-empty" data-cart-empty>
+      <h4>Your basket is empty</h4>
+      <p style="font-size: var(--fs-sm); margin-bottom: var(--s-5);">Start with a collar, that's where most of our customers do.</p>
+      <a href="/collections/collars.html" class="btn btn-primary btn-sm" data-close-cart>Shop collars</a>
+    </div>
+  </div>
+
+  <div class="cart-footer" data-cart-footer hidden>
+    <div class="cart-upsell" data-cart-upsell hidden></div>
+    <div class="cart-extras" data-cart-extras hidden></div>
+    <div class="cart-total">
+      <span>Subtotal</span>
+      <strong data-cart-total>£0.00</strong>
+    </div>
+    <button class="btn btn-primary btn-block btn-lg" data-checkout>
+      Proceed to checkout
+    </button>
+    <p class="cart-note">30% off your cheapest lead, automatic when paired with a collar (one discount per collar). Free UK delivery over £75.</p>
+  </div>
+</aside>
