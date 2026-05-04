@@ -576,7 +576,7 @@
 }
 
 .card-media {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   background: var(--cream-deep);
   overflow: hidden;
   position: relative;
@@ -584,7 +584,7 @@
 
 .card-media img {
   width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform var(--dur-slow) var(--ease);
 }
 
@@ -719,9 +719,15 @@
 .cart-close:hover { background: var(--cream-deep); }
 
 .cart-items {
-  flex: 1;
+  flex: 1 1 0;
+  min-height: 0;
   overflow-y: auto;
   padding: var(--s-4) var(--s-6);
+  -webkit-overflow-scrolling: touch;
+}
+
+.cart-footer {
+  flex-shrink: 0;
 }
 
 .cart-empty {
