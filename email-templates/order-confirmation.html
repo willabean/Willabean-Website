@@ -1,0 +1,227 @@
+<!--
+  Willabean - Order Confirmation email
+  ====================================
+  PASTE INTO: Shopify Admin → Settings → Notifications → Order confirmation → Edit code
+  REPLACE: the entire HTML body of the email (keep the email subject as-is or edit separately)
+
+  Notes:
+  - Uses Shopify Liquid variables ({{ order.name }}, {{ order.line_items }}, etc.)
+  - Logo URL points to the live site. If your domain isn't pointing yet, upload
+    /images/brand/logo.png to Shopify Admin → Content → Files and replace the
+    LOGO_URL placeholder below with the Shopify CDN URL it gives you.
+  - Web-safe fonts only (Georgia/Arial). Fraunces and Inter can't be relied on
+    in email clients, especially Outlook.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Order {{ order.name }} confirmed</title>
+</head>
+<body style="margin:0; padding:0; background:#f5ede0; color:#1f1f1a; font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:none;">
+
+<!-- Preheader: short summary text, hidden in body but shown in inbox preview -->
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+  Thanks {{ customer.first_name | default: "from all of us" }}, order {{ order.name }} is in the workshop and we're getting started.
+</div>
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f5ede0;">
+  <tr>
+    <td align="center" style="padding: 32px 16px;">
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px; width:100%; background:#ffffff;">
+
+        <!-- Logo -->
+        <tr>
+          <td align="center" style="padding: 36px 24px 24px 24px; background:#faf5ec;">
+            <a href="https://www.willabean.co.uk/" style="text-decoration:none; border:0;">
+              <img src="https://www.willabean.co.uk/images/brand/logo.png"
+                   alt="Willabean"
+                   width="160"
+                   style="display:block; border:0; outline:none; text-decoration:none; height:auto; max-width:160px;" />
+            </a>
+          </td>
+        </tr>
+
+        <!-- Moss header band -->
+        <tr>
+          <td style="background:#3e5236; padding: 28px 32px; color:#faf5ec; font-family: Georgia, 'Times New Roman', serif;">
+            <p style="margin:0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#a67b40;">
+              Order {{ order.name }} confirmed
+            </p>
+            <h1 style="margin:0; font-family: Georgia, 'Times New Roman', serif; font-weight:normal; font-size:28px; line-height:1.25; color:#faf5ec;">
+              Thanks {{ customer.first_name | default: "from all of us" }}, your order is in the workshop.
+            </h1>
+          </td>
+        </tr>
+
+        <!-- Body copy -->
+        <tr>
+          <td style="padding: 32px 32px 16px 32px; font-size:15px; line-height:1.6; color:#1f1f1a;">
+            <p style="margin:0 0 16px 0;">
+              We've got it. Every order is handmade to your dog's exact measurements, so we'll get started cutting, layering and riveting right away.
+            </p>
+            <p style="margin:0 0 16px 0;">
+              Lead time is usually <strong>5–7 working days</strong> from order to dispatch. Archie sets and multi-colour builds take a touch longer (up to 14 working days), and we'll always tell you if we're at the longer end.
+            </p>
+            <p style="margin:0;">
+              You'll get another email the moment it ships, with tracking.
+            </p>
+          </td>
+        </tr>
+
+        <!-- CTA button -->
+        <tr>
+          <td align="center" style="padding: 16px 32px 32px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td bgcolor="#a67b40" style="border-radius:6px;">
+                  <a href="{{ order.order_status_url }}"
+                     style="display:inline-block; padding:14px 28px; font-family: Arial, Helvetica, sans-serif; font-size:15px; font-weight:600; color:#ffffff; text-decoration:none; border-radius:6px; letter-spacing:0.02em;">
+                    View order status
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr>
+          <td style="padding: 0 32px;">
+            <div style="height:1px; background:#d8cfbd; line-height:1px; font-size:0;">&nbsp;</div>
+          </td>
+        </tr>
+
+        <!-- Order details heading -->
+        <tr>
+          <td style="padding: 28px 32px 12px 32px;">
+            <h2 style="margin:0; font-family: Georgia, 'Times New Roman', serif; font-weight:normal; font-size:20px; color:#2a3a25;">
+              Order summary
+            </h2>
+            <p style="margin:6px 0 0 0; font-size:13px; color:#6b6a63;">
+              Placed {{ order.created_at | date: "%-d %b %Y" }}
+            </p>
+          </td>
+        </tr>
+
+        <!-- Line items -->
+        <tr>
+          <td style="padding: 0 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+              {% for line in order.line_items %}
+              <tr>
+                <td valign="top" width="80" style="padding: 16px 0; border-bottom:1px solid #e8dfcd;">
+                  {% if line.image %}
+                  <img src="{{ line | img_url: 'medium' }}" alt="{{ line.title | escape }}" width="64" style="display:block; border:0; border-radius:4px;" />
+                  {% endif %}
+                </td>
+                <td valign="top" style="padding: 16px 0 16px 16px; border-bottom:1px solid #e8dfcd;">
+                  <p style="margin:0 0 4px 0; font-size:15px; font-weight:600; color:#1f1f1a;">{{ line.title }}</p>
+                  {% if line.variant.title and line.variant.title != "Default Title" %}
+                  <p style="margin:0 0 4px 0; font-size:13px; color:#6b6a63;">{{ line.variant.title }}</p>
+                  {% endif %}
+                  {% if line.properties %}
+                    {% for prop in line.properties %}
+                      {% unless prop.last == blank or prop.first contains '_' %}
+                        <p style="margin:0 0 2px 0; font-size:13px; color:#6b6a63;">
+                          <strong style="color:#3e5236;">{{ prop.first }}:</strong> {{ prop.last }}
+                        </p>
+                      {% endunless %}
+                    {% endfor %}
+                  {% endif %}
+                  <p style="margin:6px 0 0 0; font-size:13px; color:#6b6a63;">Qty {{ line.quantity }}</p>
+                </td>
+                <td valign="top" align="right" style="padding: 16px 0; border-bottom:1px solid #e8dfcd; font-size:15px; color:#1f1f1a; white-space:nowrap;">
+                  {{ line.line_price | money }}
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+          </td>
+        </tr>
+
+        <!-- Totals -->
+        <tr>
+          <td style="padding: 20px 32px 8px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+                <td style="font-size:14px; color:#6b6a63;">Subtotal</td>
+                <td align="right" style="font-size:14px; color:#1f1f1a;">{{ order.subtotal_price | money }}</td>
+              </tr>
+              {% for discount in order.discount_applications %}
+              <tr>
+                <td style="font-size:14px; color:#a67b40; padding-top:6px;">Discount{% if discount.title %} · {{ discount.title }}{% endif %}</td>
+                <td align="right" style="font-size:14px; color:#a67b40; padding-top:6px;">−{{ discount.total_allocated_amount | money }}</td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <td style="font-size:14px; color:#6b6a63; padding-top:6px;">Shipping</td>
+                <td align="right" style="font-size:14px; color:#1f1f1a; padding-top:6px;">{{ order.shipping_price | money }}</td>
+              </tr>
+              {% if order.tax_price > 0 %}
+              <tr>
+                <td style="font-size:14px; color:#6b6a63; padding-top:6px;">Tax</td>
+                <td align="right" style="font-size:14px; color:#1f1f1a; padding-top:6px;">{{ order.tax_price | money }}</td>
+              </tr>
+              {% endif %}
+              <tr>
+                <td style="font-size:16px; font-weight:600; color:#1f1f1a; padding-top:14px; border-top:1px solid #d8cfbd;">Total</td>
+                <td align="right" style="font-size:16px; font-weight:600; color:#1f1f1a; padding-top:14px; border-top:1px solid #d8cfbd;">{{ order.total_price | money }}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Shipping address -->
+        {% if order.shipping_address %}
+        <tr>
+          <td style="padding: 24px 32px 0 32px;">
+            <h3 style="margin:0 0 8px 0; font-family: Georgia, 'Times New Roman', serif; font-weight:normal; font-size:16px; color:#2a3a25;">Shipping to</h3>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:#1f1f1a;">
+              {{ order.shipping_address.name }}<br/>
+              {% if order.shipping_address.company %}{{ order.shipping_address.company }}<br/>{% endif %}
+              {{ order.shipping_address.address1 }}<br/>
+              {% if order.shipping_address.address2 %}{{ order.shipping_address.address2 }}<br/>{% endif %}
+              {{ order.shipping_address.city }}{% if order.shipping_address.province %}, {{ order.shipping_address.province }}{% endif %}<br/>
+              {{ order.shipping_address.zip }}<br/>
+              {{ order.shipping_address.country }}
+            </p>
+          </td>
+        </tr>
+        {% endif %}
+
+        <!-- Friendly closing -->
+        <tr>
+          <td style="padding: 32px 32px 24px 32px;">
+            <div style="background:#faf5ec; border-left:3px solid #a67b40; padding: 16px 18px;">
+              <p style="margin:0; font-size:14px; line-height:1.55; color:#1f1f1a;">
+                <strong>Got a question?</strong> Reply to this email or write to <a href="mailto:team@willabean.co.uk" style="color:#a67b40; text-decoration:underline;">team@willabean.co.uk</a>. There's a good chance Willow is asleep under the desk while we reply.
+              </p>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="background:#2a3a25; padding: 28px 32px; text-align:center;">
+            <p style="margin:0 0 8px 0; font-family: Georgia, 'Times New Roman', serif; font-size:18px; color:#faf5ec;">Willabean</p>
+            <p style="margin:0 0 16px 0; font-size:12px; line-height:1.55; color:#d8cfbd;">
+              Handmade in the UK · Made for the dog who comes home covered in it.
+            </p>
+            <p style="margin:0; font-size:11px; line-height:1.55; color:#a8a59b;">
+              Willabean Ltd · Company no. 15194903 · 50 Princes Street, Ipswich, IP1 1RJ<br/>
+              <a href="mailto:team@willabean.co.uk" style="color:#a67b40; text-decoration:underline;">team@willabean.co.uk</a> · <a href="https://www.willabean.co.uk/" style="color:#a67b40; text-decoration:underline;">willabean.co.uk</a>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

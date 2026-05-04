@@ -1,0 +1,116 @@
+<!--
+  Willabean - Out for Delivery email
+  ==================================
+  PASTE INTO: Shopify Admin -> Settings -> Notifications -> Out for delivery -> Edit code
+  REPLACE: the entire HTML body of the email
+
+  Notes:
+  - Sent automatically when the carrier reports the parcel as out for delivery.
+  - Shopify only fires this for carriers that report the "out for delivery" status.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Willabean order is out for delivery</title>
+</head>
+<body style="margin:0; padding:0; background:#f5ede0; color:#1f1f1a; font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:none;">
+
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+  On its way to you today. Order {{ order.name }} is out for delivery.
+</div>
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f5ede0;">
+  <tr>
+    <td align="center" style="padding: 32px 16px;">
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px; width:100%; background:#ffffff;">
+
+        <!-- Logo -->
+        <tr>
+          <td align="center" style="padding: 36px 24px 24px 24px; background:#faf5ec;">
+            <a href="https://www.willabean.co.uk/" style="text-decoration:none; border:0;">
+              <img src="https://www.willabean.co.uk/images/brand/logo.png"
+                   alt="Willabean"
+                   width="160"
+                   style="display:block; border:0; outline:none; text-decoration:none; height:auto; max-width:160px;" />
+            </a>
+          </td>
+        </tr>
+
+        <!-- Moss header band -->
+        <tr>
+          <td style="background:#3e5236; padding: 28px 32px; color:#faf5ec;">
+            <p style="margin:0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#a67b40;">
+              On its way today
+            </p>
+            <h1 style="margin:0; font-family: Georgia, 'Times New Roman', serif; font-weight:normal; font-size:28px; line-height:1.25; color:#faf5ec;">
+              {% if customer.first_name %}{{ customer.first_name }}, your{% else %}Your{% endif %} parcel is out for delivery.
+            </h1>
+          </td>
+        </tr>
+
+        <!-- Body -->
+        <tr>
+          <td style="padding: 32px 32px 16px 32px; font-size:15px; line-height:1.6; color:#1f1f1a;">
+            <p style="margin:0 0 16px 0;">
+              Your Willabean order <strong>{{ order.name }}</strong> is on the van and headed your way today. Keep an ear out for the doorbell, or your tail-wagger will if you don't.
+            </p>
+            <p style="margin:0;">
+              Track its progress below if you want a more precise window.
+            </p>
+          </td>
+        </tr>
+
+        <!-- CTA -->
+        {% if fulfillment.tracking_url %}
+        <tr>
+          <td align="center" style="padding: 24px 32px 32px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td bgcolor="#a67b40" style="border-radius:6px;">
+                  <a href="{{ fulfillment.tracking_url }}"
+                     style="display:inline-block; padding:14px 28px; font-family: Arial, Helvetica, sans-serif; font-size:15px; font-weight:600; color:#ffffff; text-decoration:none; border-radius:6px; letter-spacing:0.02em;">
+                    Track delivery
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        {% endif %}
+
+        <!-- Help block -->
+        <tr>
+          <td style="padding: 0 32px 24px 32px;">
+            <div style="background:#faf5ec; border-left:3px solid #a67b40; padding: 16px 18px;">
+              <p style="margin:0; font-size:14px; line-height:1.55; color:#1f1f1a;">
+                <strong>Not in to take it?</strong> Most carriers leave it with a neighbour or in a safe place. If you've got specific instructions, reply to this email and we'll relay them where we can.
+              </p>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="background:#2a3a25; padding: 28px 32px; text-align:center;">
+            <p style="margin:0 0 8px 0; font-family: Georgia, 'Times New Roman', serif; font-size:18px; color:#faf5ec;">Willabean</p>
+            <p style="margin:0 0 16px 0; font-size:12px; line-height:1.55; color:#d8cfbd;">
+              Handmade in the UK. Made for the dog who comes home covered in it.
+            </p>
+            <p style="margin:0; font-size:11px; line-height:1.55; color:#a8a59b;">
+              Willabean Ltd. Company no. 15194903. 50 Princes Street, Ipswich, IP1 1RJ<br/>
+              <a href="mailto:team@willabean.co.uk" style="color:#a67b40; text-decoration:underline;">team@willabean.co.uk</a> . <a href="https://www.willabean.co.uk/" style="color:#a67b40; text-decoration:underline;">willabean.co.uk</a>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!--
+  Willabean - Post-purchase follow-up email (review prompt + soft upsell)
+  ======================================================================
+  USE WITH: Shopify Email (or Klaviyo / any HTML-capable email tool).
+  This is NOT a Shopify built-in notification. It's a marketing automation.
+
+  How to set up in Shopify Email:
+    1. Shopify Admin → Marketing → Create campaign → Automation
+    2. Trigger: "Order fulfilled"
+    3. Add a Wait step: 14 days
+    4. (Optional but recommended) Add a condition: customer has not left a review
+       (requires a review app: Judge.me, Loox, Yotpo, Stamped, connected)
+    5. Send email → paste the HTML below into the email editor (use the
+       "Code" / "HTML" view)
+    6. Customise the {{ review_url }} placeholder with your actual review URL
+
+  How to set up in Klaviyo:
+    1. Flows → Create Flow → Trigger: Fulfilled Order
+    2. Time delay: 14 days
+    3. Filter: "Reviewed product" → has not been done in the last 30 days
+    4. Email step → paste this HTML into the "Source" tab
+
+  PLACEHOLDERS to replace before sending:
+    {{ review_url }}              your review page URL (Judge.me / Trustpilot / etc.)
+    {{ customer.first_name }}     auto-filled by Shopify Email / Klaviyo
+    Product image URLs and links  currently use willabean.co.uk paths;
+                                    swap if you re-host images on Shopify CDN
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How are you both getting on?</title>
+</head>
+<body style="margin:0; padding:0; background:#f5ede0; color:#1f1f1a; font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:none;">
+
+<!-- Preheader -->
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+  Two weeks in. A small ask, and a couple of things you might like.
+</div>
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f5ede0;">
+  <tr>
+    <td align="center" style="padding: 32px 16px;">
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px; width:100%; background:#ffffff;">
+
+        <!-- Logo -->
+        <tr>
+          <td align="center" style="padding: 36px 24px 24px 24px; background:#faf5ec;">
+            <a href="https://www.willabean.co.uk/" style="text-decoration:none; border:0;">
+              <img src="https://www.willabean.co.uk/images/brand/logo.png"
+                   alt="Willabean"
+                   width="160"
+                   style="display:block; border:0; outline:none; text-decoration:none; height:auto; max-width:160px;" />
+            </a>
+          </td>
+        </tr>
+
+        <!-- Moss header band -->
+        <tr>
+          <td style="background:#3e5236; padding: 28px 32px; color:#faf5ec;">
+            <p style="margin:0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#a67b40;">
+              Two weeks in
+            </p>
+            <h1 style="margin:0; font-family: Georgia, 'Times New Roman', serif; font-weight:normal; font-size:28px; line-height:1.25; color:#faf5ec;">
+              {% if customer.first_name %}{{ customer.first_name }}, how{% else %}How{% endif %} are you both getting on?
+            </h1>
+          </td>
+        </tr>
+
+        <!-- Body -->
+        <tr>
+          <td style="padding: 32px 32px 8px 32px; font-size:15px; line-height:1.6; color:#1f1f1a;">
+            <p style="margin:0 0 16px 0;">
+              It's been a fortnight since your order arrived. We hope it's settled in well: survived the first few muddy walks, the first river dip, the first roll in something unspeakable.
+            </p>
+            <p style="margin:0 0 16px 0;">
+              If you've got a minute, we'd love to hear how it's going. Reviews are how small workshops like ours get found by other dog people, and they genuinely make our day.
+            </p>
+            <p style="margin:0;">
+              Even one or two lines makes a difference. A photo, if you've got one, makes our week.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Review CTA -->
+        <tr>
+          <td align="center" style="padding: 24px 32px 16px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td bgcolor="#a67b40" style="border-radius:6px;">
+                  <a href="{{ review_url }}"
+                     style="display:inline-block; padding:14px 28px; font-family: Arial, Helvetica, sans-serif; font-size:15px; font-weight:600; color:#ffffff; text-decoration:none; border-radius:6px; letter-spacing:0.02em;">
+                    Leave a review
+                  </a>
+                </td>
+              </tr>
+            </table>
+            <p style="margin:14px 0 0 0; font-size:13px; color:#6b6a63;">
+              Takes about a minute · No account needed
+            </p>
+          </td>
+        </tr>
+
+        <!-- Or reply -->
+        <tr>
+          <td style="padding: 0 32px 32px 32px; text-align:center;">
+            <p style="margin:0; font-size:13px; color:#6b6a63; line-height:1.55;">
+              Prefer to write back directly? Reply to this email. We read every one.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr>
+          <td style="padding: 0 32px;">
+            <div style="height:1px; background:#d8cfbd; line-height:1px; font-size:0;">&nbsp;</div>
+          </td>
+        </tr>
+
+        <!-- Soft upsell intro -->
+        <tr>
+          <td style="padding: 32px 32px 8px 32px;">
+            <p style="margin:0 0 6px 0; font-family: Arial, Helvetica, sans-serif; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#a67b40;">
+              While we're here
+            </p>
+            <h2 style="margin:0; font-family: Georgia, 'Times New Roman', serif; font-weight:normal; font-size:22px; color:#2a3a25;">
+              A few things that pair nicely.
+            </h2>
+            <p style="margin:8px 0 0 0; font-size:14px; line-height:1.6; color:#6b6a63;">
+              Each one's handmade in the UK by us. Standing offer: <strong style="color:#1f1f1a;">30% off your cheapest lead with a collar</strong>, applied automatically at checkout.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Upsell tiles (3-column on desktop, stack on mobile) -->
+        <tr>
+          <td style="padding: 24px 32px 8px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+                <!-- Matching lead tile -->
+                <td valign="top" width="33%" style="padding: 0 8px 16px 0;">
+                  <a href="https://www.willabean.co.uk/collections/matching-sets.html" style="text-decoration:none; color:#1f1f1a;">
+                    <img src="https://www.willabean.co.uk/images/products/winnie/1.png" alt="Matching collar and lead set" width="170" style="display:block; border:0; width:100%; max-width:170px; height:auto; border-radius:4px;" />
+                    <p style="margin:10px 0 4px 0; font-family: Georgia, 'Times New Roman', serif; font-size:16px; color:#2a3a25;">A matching lead</p>
+                    <p style="margin:0 0 6px 0; font-size:13px; line-height:1.5; color:#6b6a63;">Built to pair with your collar. Same colours, same construction.</p>
+                    <p style="margin:0; font-size:13px; color:#a67b40; font-weight:600;">Shop matching sets &rarr;</p>
+                  </a>
+                </td>
+                <!-- Henry traffic handle tile -->
+                <td valign="top" width="33%" style="padding: 0 4px 16px 4px;">
+                  <a href="https://www.willabean.co.uk/products/henry-traffic-handle.html" style="text-decoration:none; color:#1f1f1a;">
+                    <img src="https://www.willabean.co.uk/images/products/henry-traffic-handle/1.png" alt="The Henry traffic handle" width="170" style="display:block; border:0; width:100%; max-width:170px; height:auto; border-radius:4px;" />
+                    <p style="margin:10px 0 4px 0; font-family: Georgia, 'Times New Roman', serif; font-size:16px; color:#2a3a25;">The Henry handle</p>
+                    <p style="margin:0 0 6px 0; font-size:13px; line-height:1.5; color:#6b6a63;">A short close-control handle for pavement-side moments. Slips onto any lead.</p>
+                    <p style="margin:0; font-size:13px; color:#a67b40; font-weight:600;">Have a look &rarr;</p>
+                  </a>
+                </td>
+                <!-- Mud Daddy tile -->
+                <td valign="top" width="33%" style="padding: 0 0 16px 8px;">
+                  <a href="https://www.willabean.co.uk/products/mud-daddy-5l.html" style="text-decoration:none; color:#1f1f1a;">
+                    <img src="https://www.willabean.co.uk/images/products/mud-daddy-5l/1.jpg" alt="Mud Daddy 5L portable dog washer" width="170" style="display:block; border:0; width:100%; max-width:170px; height:auto; border-radius:4px;" />
+                    <p style="margin:10px 0 4px 0; font-family: Georgia, 'Times New Roman', serif; font-size:16px; color:#2a3a25;">Mud Daddy 5L</p>
+                    <p style="margin:0 0 6px 0; font-size:13px; line-height:1.5; color:#6b6a63;">The portable dog washer that cleans the dog before the dog gets in the car.</p>
+                    <p style="margin:0; font-size:13px; color:#a67b40; font-weight:600;">Shop Mud Daddy &rarr;</p>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Browse all CTA -->
+        <tr>
+          <td align="center" style="padding: 16px 32px 32px 32px;">
+            <a href="https://www.willabean.co.uk/shop.html" style="font-size:14px; font-weight:600; color:#3e5236; text-decoration:none; border-bottom:1px solid #3e5236;">
+              Or browse the full range &rarr;
+            </a>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="background:#2a3a25; padding: 28px 32px; text-align:center;">
+            <p style="margin:0 0 8px 0; font-family: Georgia, 'Times New Roman', serif; font-size:18px; color:#faf5ec;">Willabean</p>
+            <p style="margin:0 0 16px 0; font-size:12px; line-height:1.55; color:#d8cfbd;">
+              Handmade in the UK · Made for the dog who comes home covered in it.
+            </p>
+            <p style="margin:0 0 12px 0; font-size:11px; line-height:1.55; color:#a8a59b;">
+              Willabean Ltd · Company no. 15194903 · 50 Princes Street, Ipswich, IP1 1RJ<br/>
+              <a href="mailto:team@willabean.co.uk" style="color:#a67b40; text-decoration:underline;">team@willabean.co.uk</a> · <a href="https://www.willabean.co.uk/" style="color:#a67b40; text-decoration:underline;">willabean.co.uk</a>
+            </p>
+            <p style="margin:0; font-size:10px; line-height:1.55; color:#6b6a63;">
+              You're getting this because you ordered from us recently. Don't want these check-ins? <a href="{% if unsubscribe_url %}{{ unsubscribe_url }}{% else %}mailto:team@willabean.co.uk?subject=Unsubscribe{% endif %}" style="color:#a8a59b; text-decoration:underline;">Unsubscribe here</a> and we'll only send you order updates.
+            </p>
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

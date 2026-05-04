@@ -1,0 +1,156 @@
+<!--
+  Willabean - Refund Notification email
+  =====================================
+  PASTE INTO: Shopify Admin → Settings → Notifications → Refund notification → Edit code
+  REPLACE: the entire HTML body of the email
+
+  Notes:
+  - Sent automatically when a refund is issued from Shopify Admin (full or partial).
+  - {{ refund_amount }} is the amount being refunded in this transaction.
+  - {{ refund_line_items }} contains the items being refunded (may be a subset of the order).
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Refund for order {{ order.name }}</title>
+</head>
+<body style="margin:0; padding:0; background:#f5ede0; color:#1f1f1a; font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:none;">
+
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+  Your refund of {{ refund_amount | money }} for order {{ order.name }} is on its way.
+</div>
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f5ede0;">
+  <tr>
+    <td align="center" style="padding: 32px 16px;">
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px; width:100%; background:#ffffff;">
+
+        <!-- Logo -->
+        <tr>
+          <td align="center" style="padding: 36px 24px 24px 24px; background:#faf5ec;">
+            <a href="https://www.willabean.co.uk/" style="text-decoration:none; border:0;">
+              <img src="https://www.willabean.co.uk/images/brand/logo.png"
+                   alt="Willabean"
+                   width="160"
+                   style="display:block; border:0; outline:none; text-decoration:none; height:auto; max-width:160px;" />
+            </a>
+          </td>
+        </tr>
+
+        <!-- Moss header band -->
+        <tr>
+          <td style="background:#3e5236; padding: 28px 32px; color:#faf5ec;">
+            <p style="margin:0 0 8px 0; font-family: Arial, Helvetica, sans-serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; color:#a67b40;">
+              Refund · Order {{ order.name }}
+            </p>
+            <h1 style="margin:0; font-family: Georgia, 'Times New Roman', serif; font-weight:normal; font-size:28px; line-height:1.25; color:#faf5ec;">
+              {% if customer.first_name %}{{ customer.first_name }}, your{% else %}Your{% endif %} refund is on its way.
+            </h1>
+          </td>
+        </tr>
+
+        <!-- Body -->
+        <tr>
+          <td style="padding: 32px 32px 16px 32px; font-size:15px; line-height:1.6; color:#1f1f1a;">
+            <p style="margin:0 0 16px 0;">
+              We've issued a refund of <strong>{{ refund_amount | money }}</strong> back to your original payment method. Depending on your bank, it usually shows up within <strong>5–10 working days</strong>.
+            </p>
+            <p style="margin:0;">
+              You don't need to do anything. If it doesn't appear within ten working days, reply to this email and we'll chase it with the payment provider.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr>
+          <td style="padding: 0 32px;">
+            <div style="height:1px; background:#d8cfbd; line-height:1px; font-size:0;">&nbsp;</div>
+          </td>
+        </tr>
+
+        <!-- Refund details -->
+        <tr>
+          <td style="padding: 28px 32px 12px 32px;">
+            <h2 style="margin:0; font-family: Georgia, 'Times New Roman', serif; font-weight:normal; font-size:20px; color:#2a3a25;">
+              What we've refunded
+            </h2>
+          </td>
+        </tr>
+
+        {% if refund_line_items.size > 0 %}
+        <tr>
+          <td style="padding: 0 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+              {% for refund_line_item in refund_line_items %}
+              {% assign line = refund_line_item.line_item %}
+              <tr>
+                <td valign="top" width="80" style="padding: 16px 0; border-bottom:1px solid #e8dfcd;">
+                  {% if line.image %}
+                  <img src="{{ line | img_url: 'medium' }}" alt="{{ line.title | escape }}" width="64" style="display:block; border:0; border-radius:4px;" />
+                  {% endif %}
+                </td>
+                <td valign="top" style="padding: 16px 0 16px 16px; border-bottom:1px solid #e8dfcd;">
+                  <p style="margin:0 0 4px 0; font-size:15px; font-weight:600; color:#1f1f1a;">{{ line.title }}</p>
+                  {% if line.variant.title and line.variant.title != "Default Title" %}
+                  <p style="margin:0 0 4px 0; font-size:13px; color:#6b6a63;">{{ line.variant.title }}</p>
+                  {% endif %}
+                  <p style="margin:6px 0 0 0; font-size:13px; color:#6b6a63;">Qty refunded {{ refund_line_item.quantity }}</p>
+                </td>
+                <td valign="top" align="right" style="padding: 16px 0; border-bottom:1px solid #e8dfcd; font-size:15px; color:#1f1f1a; white-space:nowrap;">
+                  {{ refund_line_item.subtotal | money }}
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+          </td>
+        </tr>
+        {% endif %}
+
+        <!-- Refund total -->
+        <tr>
+          <td style="padding: 20px 32px 8px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr>
+                <td style="font-size:16px; font-weight:600; color:#1f1f1a; padding-top:6px; border-top:1px solid #d8cfbd;">Refund total</td>
+                <td align="right" style="font-size:16px; font-weight:600; color:#a67b40; padding-top:6px; border-top:1px solid #d8cfbd;">{{ refund_amount | money }}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Help block -->
+        <tr>
+          <td style="padding: 28px 32px 24px 32px;">
+            <div style="background:#faf5ec; border-left:3px solid #a67b40; padding: 16px 18px;">
+              <p style="margin:0; font-size:14px; line-height:1.55; color:#1f1f1a;">
+                <strong>Anything we can do better next time?</strong> Reply to this email and tell us. We read every one, and we'd genuinely like to know.
+              </p>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="background:#2a3a25; padding: 28px 32px; text-align:center;">
+            <p style="margin:0 0 8px 0; font-family: Georgia, 'Times New Roman', serif; font-size:18px; color:#faf5ec;">Willabean</p>
+            <p style="margin:0 0 16px 0; font-size:12px; line-height:1.55; color:#d8cfbd;">
+              Handmade in the UK · Made for the dog who comes home covered in it.
+            </p>
+            <p style="margin:0; font-size:11px; line-height:1.55; color:#a8a59b;">
+              Willabean Ltd · Company no. 15194903 · 50 Princes Street, Ipswich, IP1 1RJ<br/>
+              <a href="mailto:team@willabean.co.uk" style="color:#a67b40; text-decoration:underline;">team@willabean.co.uk</a> · <a href="https://www.willabean.co.uk/" style="color:#a67b40; text-decoration:underline;">willabean.co.uk</a>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
