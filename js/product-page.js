@@ -97,13 +97,27 @@ document.addEventListener('partials:ready', () => {
   const measureInput = document.querySelector('[data-measurement]');
   const measureError = document.querySelector('[data-measurement-error]');
 
+  // Strip everything except digits and a single decimal point. Lets customers
+  // type "34cm", "34 cm", "34.5cm" etc. without the form silently rejecting them.
+  function sanitizeMeasurement(raw) {
+    if (raw == null) return '';
+    let s = String(raw).replace(/[^0-9.]/g, '');
+    const firstDot = s.indexOf('.');
+    if (firstDot !== -1) {
+      s = s.slice(0, firstDot + 1) + s.slice(firstDot + 1).replace(/\./g, '');
+    }
+    return s;
+  }
+
   function validateMeasurement() {
     if (!measureInput) return true;
-    const val = parseFloat(measureInput.value);
+    const cleaned = sanitizeMeasurement(measureInput.value);
+    if (cleaned !== measureInput.value) measureInput.value = cleaned;
+    const val = parseFloat(cleaned);
     const min = parseFloat(measureInput.min) || 15;
     const max = parseFloat(measureInput.max) || 70;
     if (!val || val < min || val > max) {
-      if (measureError) measureError.textContent = `Please enter a neck measurement between ${min} and ${max} cm.`;
+      if (measureError) measureError.textContent = `Please enter a neck measurement between ${min} and ${max} cm. Numbers only, e.g. "34" or "34.5".`;
       measureInput.setAttribute('aria-invalid', 'true');
       return false;
     }
@@ -112,7 +126,12 @@ document.addEventListener('partials:ready', () => {
     return true;
   }
 
-  measureInput?.addEventListener('blur', validateMeasurement);
+  measureInput?.addEventListener('blur', () => {
+    // On blur, also normalise the value so the user sees "34" instead of "34cm"
+    const cleaned = sanitizeMeasurement(measureInput.value);
+    if (cleaned !== measureInput.value) measureInput.value = cleaned;
+    validateMeasurement();
+  });
   measureInput?.addEventListener('input', () => {
     if (measureInput.getAttribute('aria-invalid') === 'true') validateMeasurement();
   });
