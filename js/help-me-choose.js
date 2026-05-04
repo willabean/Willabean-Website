@@ -24,35 +24,35 @@
     },
     walter: {
       name: 'The Walter',
-      desc: 'A narrow contrast strip riveted along the top of a wider base. The understated layered build, two colours but quietly.',
+      desc: 'A narrow contrast strip riveted along the full length of a wider base. The understated, fully layered design, two colours quietly done.',
       image: '/images/products/walter/1.png',
       price: 'From £22',
       href: '/products/walter.html'
     },
     winnie: {
       name: 'The Winnie',
-      desc: 'Our signature two-colour layered collar. Two colours of webbing, layered together and riveted into a thicker, stronger, one-of-one build.',
+      desc: 'A primary colour for the length of the collar, with a contrast accent layered at the buckle. The elegant flourish.',
       image: '/images/products/winnie/1.png',
       price: 'From £22',
       href: '/products/winnie.html'
     },
     mabel: {
       name: 'The Mabel',
-      desc: 'The bold half-and-half two-colour layered build. Two contrasting colours running side-by-side, available in two widths.',
+      desc: 'Two colours laid end-to-end and joined at the centre. The bold half-and-half design.',
       image: '/images/products/mabel/1.png',
-      price: 'From £22',
+      price: 'From £24',
       href: '/products/mabel.html'
     },
     willow: {
       name: 'The Willow',
-      desc: 'A three-colour layered slip collar with grab section and safety stopper. Built specifically for working dogs and gundog handlers.',
+      desc: 'A three-section slip collar separated by a D-ring and an O-ring, with a built-in grab handle and safety stopper. Built for working dogs.',
       image: '/images/products/willow/1.png',
       price: 'From £26',
       href: '/products/willow.html'
     },
     archie: {
       name: 'The Archie',
-      desc: 'Up to three accent colours layered onto your chosen base. Our most bespoke build, no two are the same. Worth the wait.',
+      desc: 'Up to four accent colours layered onto your chosen base. Our most bespoke build, no two are the same. Worth the wait.',
       image: '/images/products/archie/1.png',
       price: 'From £28',
       href: '/products/archie.html'
@@ -76,18 +76,18 @@
 
   function pickLede(s, product) {
     if (s.use === 'working') {
-      return 'For working dogs, gundog training and water retrieves, the Willow is the only collar in the range built for the job. Three colours, layered, with a grab section and safety stopper.';
+      return 'For working dogs, gundog training and water retrieves, the Willow is the only collar in the range built for the job. Three sections of webbing separated by a D-ring and O-ring, with a grab section and safety stopper.';
     }
     if (s.use === 'house') {
       return 'For indoor wear, the Bertie is the right call. Soft and light, easy to slip on and off, never meant to take a lead.';
     }
     if (product === 'archie') {
-      return 'When you want every detail to be your call, the Archie is the build for it. Up to four colours, layered and riveted, properly bespoke.';
+      return 'When you want every detail to be your call, the Archie is the build for it. Up to five colours, layered and riveted, properly bespoke.';
     }
     if (product === 'hugo') {
       return 'For everyday walking with no fuss, the Hugo is where most of our customers start. One colour, your hardware, built to last.';
     }
-    return 'For everyday walking with a bit more design to it, the Winnie is our signature two-colour layered build. Pick two colours, pick your hardware, we make it to fit.';
+    return 'For everyday walking with a bit more design to it, the Winnie is our signature accent build. Your main colour for the length of the collar, with a contrast layer at the buckle. Pick two colours, pick your hardware, we make it to fit.';
   }
 
   const steps = document.querySelectorAll('.chooser-step');

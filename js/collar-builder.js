@@ -14,7 +14,7 @@
     Silver:      { fill: '#c9c9c5', stroke: '#888881' },
     Bronze:      { fill: '#a87a4a', stroke: '#7a572f' },
     Gold:        { fill: '#caa14a', stroke: '#8a6c25' },
-    'Gun Metal': { fill: '#3c4147', stroke: '#1a1d20' },
+    Gunmetal:    { fill: '#3c4147', stroke: '#1a1d20' },
     'Rose Gold': { fill: '#b76e79', stroke: '#854c55' }
   };
 

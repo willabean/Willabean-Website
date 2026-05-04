@@ -1,6 +1,6 @@
 # Willabean — HTML/CSS/JS rebuild
 
-Handmade biothane dog collars, leads, and gear. A 28-page static site, designed fresh from the SEO audit copy, with headless Shopify ready to plug in.
+Handmade waterproof PVC-coated dog collars, leads, and gear. A 28-page static site, designed fresh from the SEO audit copy, with headless Shopify ready to plug in.
 
 ## How to preview
 
@@ -19,7 +19,7 @@ Mac/Linux: `chmod +x start.sh && ./start.sh` (needs Python 3, standard on those 
 - **Our Story** (`our-story.html`) — Aimee + Jon + Willow, values
 - **Collections** (`collections/`) — Collars, Leads, Matching Sets (new), Gundog, Mud Daddy
 - **Products** (`products/`) — 7 collars (Bertie, Hugo, Walter, Winnie, Mabel, Willow, Archie), 5 matching leads, Henry Traffic Handle, Mud Daddy 5L
-- **Journal** (`blog/`) — index plus three long-form posts: "How to measure your dog", "What is biothane", "Slip vs buckle"
+- **Journal** (`blog/`) — index plus three long-form posts: "How to measure your dog", "Why we use PVC-coated webbing", "Slip vs buckle"
 
 Every product page has colour/hardware/fastening pickers, a neck-measurement input, add-to-cart, and Product JSON-LD. Every blog post has FAQPage JSON-LD.
 
@@ -95,7 +95,7 @@ Without this, the cart is local-only and "Proceed to checkout" shows a mock mess
 ├── sitemap.xml                     All 28 URLs
 ├── robots.txt
 ├── start.bat / start.sh / start.ps1  Local preview launchers
-├── willabean-seo-audit-v2.md       The source-of-truth content document
+├── willabean-seo-audit-v3.md       The source-of-truth content document
 └── README.md                       You are here
 ```
 
@@ -122,4 +122,4 @@ Loaded from Google Fonts CDN; can be self-hosted in `/fonts/` later for performa
 
 ---
 
-*Content in this site is drawn from `willabean-seo-audit-v2.md`. Tech: plain HTML/CSS/JS, no build step, no framework. Commerce: headless Shopify, ready to wire in.*
+*Content in this site is drawn from `willabean-seo-audit-v3.md`. Tech: plain HTML/CSS/JS, no build step, no framework. Commerce: headless Shopify, ready to wire in.*

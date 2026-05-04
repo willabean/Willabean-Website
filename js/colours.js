@@ -4,7 +4,7 @@
    reflected here, this list drives the swatches on every product page and
    the collar builder. */
 window.WillabeanColours = (function () {
-  /* Webbing colours (PVC-coated webbing / "biothane"). 19 colours. */
+  /* Webbing colours (waterproof PVC-coated webbing). 19 colours. */
   const PALETTE = [
     { id: 'black',         label: 'Black',         hex: '#000000' },
     { id: 'white',         label: 'White',         hex: '#ffffff' },
@@ -33,7 +33,7 @@ window.WillabeanColours = (function () {
     { id: 'silver',     label: 'Silver',     hex: '#c9c9c5' },
     { id: 'bronze',     label: 'Bronze',     hex: '#a87a4a' },
     { id: 'gold',       label: 'Gold',       hex: '#caa14a' },
-    { id: 'gun-metal',  label: 'Gun Metal',  hex: '#3c4147' },
+    { id: 'gun-metal',  label: 'Gunmetal',   hex: '#3c4147' },
     { id: 'rose-gold',  label: 'Rose Gold',  hex: '#b76e79' }
   ];
 
