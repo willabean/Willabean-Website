@@ -1,6 +1,3 @@
-# Secrets — Shopify Storefront token lives here, never commit
-js/config.js
-
 # OS cruft
 .DS_Store
 Thumbs.db
