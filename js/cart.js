@@ -310,7 +310,7 @@ const FINAL_EXTRAS = [
     key: 'henry',
     title: 'Henry Traffic Handle',
     desc: 'Close-control secondary handle for busy walks.',
-    image: '/images/products/henry-traffic-handle/1.png',
+    image: '/images/products/henry-traffic-handle/1.jpg',
     href: '/products/henry-traffic-handle.html',
     price: '£12.00',
     test: (titles) => !titles.some(t => /traffic handle|\bhenry\b/i.test(t))

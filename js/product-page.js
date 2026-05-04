@@ -322,7 +322,7 @@ document.addEventListener('partials:ready', () => {
       title: matchingLead.title,
       variant: variantSummary,
       price: matchingLead.basePrice + lengthAdd,
-      image: `/images/products/${matchingLead.handle}/1.png`,
+      image: `/images/products/${matchingLead.handle}/1.jpg`,
       properties: Object.keys(leadProperties).length ? leadProperties : null
     };
   }

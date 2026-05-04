@@ -11,49 +11,49 @@
     bertie: {
       name: 'The Bertie',
       desc: 'A soft single-colour house collar, O-ring fastening, for indoor wear only. Light enough to lie on, easy to slip on and off.',
-      image: '/images/products/bertie/1.png',
+      image: '/images/products/bertie/1.jpg',
       price: 'From £15',
       href: '/products/bertie.html'
     },
     hugo: {
       name: 'The Hugo',
       desc: 'A clean single-layer collar in your colour and your hardware. The first proper walking collar most of our customers buy.',
-      image: '/images/products/hugo/1.png',
+      image: '/images/products/hugo/1.jpg',
       price: 'From £15',
       href: '/products/hugo.html'
     },
     walter: {
       name: 'The Walter',
       desc: 'A narrow contrast strip riveted along the full length of a wider base. The understated, fully layered design, two colours quietly done.',
-      image: '/images/products/walter/1.png',
+      image: '/images/products/walter/1.jpg',
       price: 'From £22',
       href: '/products/walter.html'
     },
     winnie: {
       name: 'The Winnie',
       desc: 'A primary colour for the length of the collar, with a contrast accent layered at the buckle. The elegant flourish.',
-      image: '/images/products/winnie/1.png',
+      image: '/images/products/winnie/1.jpg',
       price: 'From £22',
       href: '/products/winnie.html'
     },
     mabel: {
       name: 'The Mabel',
       desc: 'Two colours laid end-to-end and joined at the centre. The bold half-and-half design.',
-      image: '/images/products/mabel/1.png',
+      image: '/images/products/mabel/1.jpg',
       price: 'From £24',
       href: '/products/mabel.html'
     },
     willow: {
       name: 'The Willow',
       desc: 'A three-section slip collar separated by a D-ring and an O-ring, with a built-in grab handle and safety stopper. Built for working dogs.',
-      image: '/images/products/willow/1.png',
+      image: '/images/products/willow/1.jpg',
       price: 'From £26',
       href: '/products/willow.html'
     },
     archie: {
       name: 'The Archie',
       desc: 'Up to four accent colours layered onto your chosen base. Our most bespoke build, no two are the same. Worth the wait.',
-      image: '/images/products/archie/1.png',
+      image: '/images/products/archie/1.jpg',
       price: 'From £28',
       href: '/products/archie.html'
     }

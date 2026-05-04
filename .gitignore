@@ -17,3 +17,6 @@ package-lock.json
 # Logo source archive — assets are already extracted into images/brand/
 Willabean logo 2026/
 Willabean logo 2026.zip
+
+# Local debugging screenshots (not needed in production)
+Screenshots/
