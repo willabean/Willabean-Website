@@ -7,12 +7,13 @@ html {
   font-size: var(--fs-base);
   line-height: 1.55;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body.no-scroll {
