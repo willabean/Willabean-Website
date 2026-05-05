@@ -536,6 +536,9 @@
   gap: var(--s-7);
 }
 
+.product-grid > * { min-width: 0; }
+.product-info > * { min-width: 0; }
+
 .product-breadcrumb {
   font-size: var(--fs-xs);
   color: var(--muted);
