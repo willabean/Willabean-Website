@@ -1684,6 +1684,7 @@
 @media (max-width: 720px) {
 
   /* Section padding: ~30% less on phone */
+  main > section,
   .range-section,
   .reviews-section,
   .instagram-section,
