@@ -832,6 +832,11 @@
   margin-block: var(--s-9) var(--s-5);
 }
 
+.collection-sub:first-child,
+.container > .collection-sub:first-child {
+  margin-top: 0;
+}
+
 .collection-sub h2 {
   font-size: var(--fs-xl);
   margin-bottom: var(--s-3);
